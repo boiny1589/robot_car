@@ -19,7 +19,6 @@ find_package(catkin REQUIRED COMPONENTS
   tf2_ros
   tf_conversions
   move_base_msgs
-
 )
 
 ## System dependencies are found with CMake's conventions
@@ -122,7 +121,6 @@ catkin_package(
  tf2_ros
  tf_conversions
  move_base_msgs
-#  DEPENDS system_lib
 )
 
 ###########

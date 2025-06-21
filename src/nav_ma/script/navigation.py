@@ -320,6 +320,7 @@ def shutdown():
     rospy.loginfo("navigation finished")
 
 if __name__ == "__main__":
+    rospy.init_node("navigation")
     try:
         Navigation()
         # rospy.on_shutdown(shutdown)

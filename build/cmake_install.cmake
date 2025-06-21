@@ -131,6 +131,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ubuntu/robot_car/build/gtest/cmake_install.cmake")
+  include("/home/ubuntu/robot_car/build/gazebo_car_master/cmake_install.cmake")
+  include("/home/ubuntu/robot_car/build/laser_line_extraction/cmake_install.cmake")
   include("/home/ubuntu/robot_car/build/upper_control/cmake_install.cmake")
   include("/home/ubuntu/robot_car/build/nav_ma/cmake_install.cmake")
   include("/home/ubuntu/robot_car/build/urdf_gazebo/cmake_install.cmake")
