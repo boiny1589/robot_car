@@ -1,0 +1,19 @@
+<robot name="mycar" xmlns:xacro="http://wiki.ros.org/xacro">
+    <!-- 
+        This is the top-level xacro file for the robot.
+        It includes all the component parts of the robot.
+        The included files themselves should be self-contained and include
+        any necessary properties or macros they depend on.
+    -->
+
+    <!-- Robot Component Parts -->
+    <xacro:include filename="my_base.urdf.xacro" />
+    <xacro:include filename="my_camera.urdf.xacro" />
+    <xacro:include filename="my_laser.urdf.xacro" />
+
+    <!-- Gazebo Plugins for Simulation -->
+    <xacro:include filename="gazebo/move.xacro" />
+    <xacro:include filename="gazebo/laser.xacro" />
+    <xacro:include filename="gazebo/camera.xacro" />
+    <!-- <xacro:include filename="gazebo/kinect.xacro" /> -->
+</robot>

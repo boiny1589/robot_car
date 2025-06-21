@@ -1,0 +1,88 @@
+<robot name="my_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Include common properties and macros -->
+    <xacro:include filename="common_properties.urdf.xacro" />
+    <xacro:include filename="common_macros.urdf.xacro" />
+
+    <!-- Material for Rviz -->
+    <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0" />
+    </material>
+    <material name="yellow">
+        <color rgba="0.5 0.3 0.0 0.5" />
+    </material>
+
+    <!-- Base footprint is a standard convention in ROS. It's a point on the ground directly below the robot's center. -->
+    <link name="base_footprint" />
+
+    <!-- Base link is the main body of the robot. -->
+    <link name="base_link">
+      <visual>
+        <geometry>
+          <box size="${base_link_long} ${base_link_long} ${base_link_length}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <material name="yellow" />
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${base_link_long} ${base_link_long} ${base_link_length}"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+      </collision>
+      <xacro:Box_inertial_matrix m="${base_link_m}" l="${base_link_long}" w="${base_link_long}" h="${base_link_length}" />
+    </link>
+
+    <joint name="base_link_to_base_footprint" type="fixed">
+      <parent link="base_footprint" />
+      <child link="base_link" />
+      <origin xyz="0 0 ${wheel_radius + earth_space}" />
+    </joint>
+
+    <gazebo reference="base_link">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <!-- Macro to create a wheel and attach it to the base_link -->
+    <xacro:macro name="add_wheel" params="name x_offset y_offset">
+      <link name="${name}_wheel">
+        <visual>
+          <geometry>
+            <cylinder radius="${wheel_radius}" length="${wheel_length}" />
+          </geometry>
+          <origin xyz="0.0 0.0 0.0" rpy="${PI / 2} 0.0 0.0" />
+          <material name="black" />
+        </visual>
+        <collision>
+          <geometry>
+            <cylinder radius="${wheel_radius}" length="${wheel_length}" />
+          </geometry>
+          <origin xyz="0.0 0.0 0.0" rpy="${PI / 2} 0.0 0.0" />
+        </collision>
+        <xacro:cylinder_inertial_matrix m="${wheel_m}" r="${wheel_radius}" h="${wheel_length}" />
+      </link>
+
+      <joint name="${name}_wheel_to_base_link" type="continuous">
+        <parent link="base_link" />
+        <child link="${name}_wheel" />
+        <origin xyz="${x_offset} ${y_offset} ${-earth_space}" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+      </joint>
+
+      <gazebo reference="${name}_wheel">
+        <material>Gazebo/Red</material>
+      </gazebo>
+    </xacro:macro>
+
+    <!-- Instantiation of the four wheels -->
+    <xacro:property name="wheel_x_offset" value="0.08" />
+    <xacro:property name="wheel_y_offset" value="${base_link_long / 2 + wheel_length / 2}" />
+
+    <xacro:add_wheel name="left_front"  x_offset="${wheel_x_offset}" y_offset="${wheel_y_offset}" />
+    <xacro:add_wheel name="left_rear"   x_offset="-${wheel_x_offset}" y_offset="${wheel_y_offset}" />
+    <xacro:add_wheel name="right_front" x_offset="${wheel_x_offset}" y_offset="-${wheel_y_offset}" />
+    <xacro:add_wheel name="right_rear"  x_offset="-${wheel_x_offset}" y_offset="-${wheel_y_offset}" />
+
+</robot>
+
+     
