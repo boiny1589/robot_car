@@ -1,12 +1,9 @@
 # CMake generated Testfile for 
-# Source directory: /home/ubuntu/robot_car/src
-# Build directory: /home/ubuntu/robot_car/build
+# Source directory: /home/ubuntu/Desktop/smartcar_xunfei_simulation/src
+# Build directory: /home/ubuntu/Desktop/smartcar_xunfei_simulation/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
-subdirs("gazebo_car_master")
-subdirs("laser_line_extraction")
-subdirs("upper_control")
-subdirs("nav_ma")
-subdirs("urdf_gazebo")
+subdirs("gazebo_pkg")
+subdirs("race_navigation")

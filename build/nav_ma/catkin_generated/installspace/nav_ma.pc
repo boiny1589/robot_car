@@ -1,8 +1,0 @@
-prefix=/home/ubuntu/robot_car/install
-
-Name: nav_ma
-Description: Description of nav_ma
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: amcl gmapping map_server move_base rospy std_msgs geometry_msgs tf tf2_ros tf_conversions move_base_msgs

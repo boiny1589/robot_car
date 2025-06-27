@@ -1,2 +1,2 @@
-gazebo_car_master:laser_line_extraction:nav_ma:upper_control:urdf_gazebo
--DCATKIN_DEVEL_PREFIX=/home/ubuntu/robot_car/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/robot_car/install -G Unix Makefiles
+gazebo_pkg:race_navigation
+-DCATKIN_DEVEL_PREFIX=/home/ubuntu/Desktop/smartcar_xunfei_simulation/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/Desktop/smartcar_xunfei_simulation/install -G Unix Makefiles

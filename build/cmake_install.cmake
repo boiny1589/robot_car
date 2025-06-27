@@ -1,8 +1,8 @@
-# Install script for directory: /home/ubuntu/robot_car/src
+# Install script for directory: /home/ubuntu/Desktop/smartcar_xunfei_simulation/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/robot_car/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,93 +49,90 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ubuntu/robot_car/install/_setup_util.py")
+   "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ubuntu/robot_car/install" TYPE PROGRAM FILES "/home/ubuntu/robot_car/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install" TYPE PROGRAM FILES "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ubuntu/robot_car/install/env.sh")
+   "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ubuntu/robot_car/install" TYPE PROGRAM FILES "/home/ubuntu/robot_car/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install" TYPE PROGRAM FILES "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ubuntu/robot_car/install/setup.bash;/home/ubuntu/robot_car/install/local_setup.bash")
+   "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install/setup.bash;/home/ubuntu/Desktop/smartcar_xunfei_simulation/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ubuntu/robot_car/install" TYPE FILE FILES
-    "/home/ubuntu/robot_car/build/catkin_generated/installspace/setup.bash"
-    "/home/ubuntu/robot_car/build/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install" TYPE FILE FILES
+    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/installspace/setup.bash"
+    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ubuntu/robot_car/install/setup.sh;/home/ubuntu/robot_car/install/local_setup.sh")
+   "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install/setup.sh;/home/ubuntu/Desktop/smartcar_xunfei_simulation/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ubuntu/robot_car/install" TYPE FILE FILES
-    "/home/ubuntu/robot_car/build/catkin_generated/installspace/setup.sh"
-    "/home/ubuntu/robot_car/build/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install" TYPE FILE FILES
+    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/installspace/setup.sh"
+    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ubuntu/robot_car/install/setup.zsh;/home/ubuntu/robot_car/install/local_setup.zsh")
+   "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install/setup.zsh;/home/ubuntu/Desktop/smartcar_xunfei_simulation/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ubuntu/robot_car/install" TYPE FILE FILES
-    "/home/ubuntu/robot_car/build/catkin_generated/installspace/setup.zsh"
-    "/home/ubuntu/robot_car/build/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install" TYPE FILE FILES
+    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/installspace/setup.zsh"
+    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ubuntu/robot_car/install/.rosinstall")
+   "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/ubuntu/robot_car/install" TYPE FILE FILES "/home/ubuntu/robot_car/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install" TYPE FILE FILES "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ubuntu/robot_car/build/gtest/cmake_install.cmake")
-  include("/home/ubuntu/robot_car/build/gazebo_car_master/cmake_install.cmake")
-  include("/home/ubuntu/robot_car/build/laser_line_extraction/cmake_install.cmake")
-  include("/home/ubuntu/robot_car/build/upper_control/cmake_install.cmake")
-  include("/home/ubuntu/robot_car/build/nav_ma/cmake_install.cmake")
-  include("/home/ubuntu/robot_car/build/urdf_gazebo/cmake_install.cmake")
+  include("/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/gtest/cmake_install.cmake")
+  include("/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/gazebo_pkg/cmake_install.cmake")
+  include("/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/race_navigation/cmake_install.cmake")
 
 endif()
 
@@ -147,5 +144,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/robot_car/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

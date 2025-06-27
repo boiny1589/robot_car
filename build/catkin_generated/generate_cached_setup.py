@@ -12,16 +12,16 @@ try:
     from catkin.environment_cache import generate_environment_script
 except ImportError:
     # search for catkin package in all workspaces and prepend to path
-    for workspace in '/home/ubuntu/robot_ws/devel;/home/ubuntu/ros_learning/devel;/opt/ros/noetic'.split(';'):
+    for workspace in '/home/ubuntu/Desktop/smartcar_xunfei_simulation/devel;/home/ubuntu/robot_car/devel;/home/ubuntu/robot_ws/devel;/home/ubuntu/ros_learning/devel;/opt/ros/noetic'.split(';'):
         python_path = os.path.join(workspace, 'lib/python3/dist-packages')
         if os.path.isdir(os.path.join(python_path, 'catkin')):
             sys.path.insert(0, python_path)
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/ubuntu/robot_car/devel/env.sh')
+code = generate_environment_script('/home/ubuntu/Desktop/smartcar_xunfei_simulation/devel/env.sh')
 
-output_filename = '/home/ubuntu/robot_car/build/catkin_generated/setup_cached.sh'
+output_filename = '/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     # print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

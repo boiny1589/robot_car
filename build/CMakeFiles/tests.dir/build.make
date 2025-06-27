@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/robot_car/src
+CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/smartcar_xunfei_simulation/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/robot_car/build
+CMAKE_BINARY_DIR = /home/ubuntu/Desktop/smartcar_xunfei_simulation/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/ubuntu/robot_car/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/robot_car/src /home/ubuntu/robot_car/src /home/ubuntu/robot_car/build /home/ubuntu/robot_car/build /home/ubuntu/robot_car/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/smartcar_xunfei_simulation/src /home/ubuntu/Desktop/smartcar_xunfei_simulation/src /home/ubuntu/Desktop/smartcar_xunfei_simulation/build /home/ubuntu/Desktop/smartcar_xunfei_simulation/build /home/ubuntu/Desktop/smartcar_xunfei_simulation/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 
