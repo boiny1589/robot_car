@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/smartcar_xunfei_simulation/src
+CMAKE_SOURCE_DIR = /home/ubuntu/robot_car/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/Desktop/smartcar_xunfei_simulation/build
+CMAKE_BINARY_DIR = /home/ubuntu/robot_car/build
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/Desktop/smartcar_xunfei_simulation/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/ubuntu/Desktop/smartcar_xunfei_simulation/build/test_results
+	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/ubuntu/robot_car/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/smartcar_xunfei_simulation/src /home/ubuntu/Desktop/smartcar_xunfei_simulation/src /home/ubuntu/Desktop/smartcar_xunfei_simulation/build /home/ubuntu/Desktop/smartcar_xunfei_simulation/build /home/ubuntu/Desktop/smartcar_xunfei_simulation/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/robot_car/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/robot_car/src /home/ubuntu/robot_car/src /home/ubuntu/robot_car/build /home/ubuntu/robot_car/build /home/ubuntu/robot_car/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 

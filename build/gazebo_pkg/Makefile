@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/smartcar_xunfei_simulation/src
+CMAKE_SOURCE_DIR = /home/ubuntu/robot_car/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/Desktop/smartcar_xunfei_simulation/build
+CMAKE_BINARY_DIR = /home/ubuntu/robot_car/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/smartcar_xunfei_simulation/build/CMakeFiles /home/ubuntu/Desktop/smartcar_xunfei_simulation/build/gazebo_pkg/CMakeFiles/progress.marks
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/smartcar_xunfei_simulation/build/CMakeFiles 0
+	cd /home/ubuntu/robot_car/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/robot_car/build/CMakeFiles /home/ubuntu/robot_car/build/gazebo_pkg/CMakeFiles/progress.marks
+	cd /home/ubuntu/robot_car/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/robot_car/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/clean
+	cd /home/ubuntu/robot_car/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/preinstall
+	cd /home/ubuntu/robot_car/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/preinstall
+	cd /home/ubuntu/robot_car/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/robot_car/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/rule
+	cd /home/ubuntu/robot_car/build && $(MAKE) -f CMakeFiles/Makefile2 gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/rule
 .PHONY : gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
@@ -179,7 +179,7 @@ _catkin_empty_exported_target: gazebo_pkg/CMakeFiles/_catkin_empty_exported_targ
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(MAKE) -f gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/build.make gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/build
+	cd /home/ubuntu/robot_car/build && $(MAKE) -f gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/build.make gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
 # Help Target
@@ -207,6 +207,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/robot_car/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

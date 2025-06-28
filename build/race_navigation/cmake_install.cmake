@@ -1,8 +1,8 @@
-# Install script for directory: /home/ubuntu/Desktop/smartcar_xunfei_simulation/src/race_navigation
+# Install script for directory: /home/ubuntu/robot_car/src/race_navigation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/robot_car/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/race_navigation/catkin_generated/installspace/race_navigation.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubuntu/robot_car/build/race_navigation/catkin_generated/installspace/race_navigation.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/race_navigation/cmake" TYPE FILE FILES
-    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/race_navigation/catkin_generated/installspace/race_navigationConfig.cmake"
-    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/race_navigation/catkin_generated/installspace/race_navigationConfig-version.cmake"
+    "/home/ubuntu/robot_car/build/race_navigation/catkin_generated/installspace/race_navigationConfig.cmake"
+    "/home/ubuntu/robot_car/build/race_navigation/catkin_generated/installspace/race_navigationConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/race_navigation" TYPE FILE FILES "/home/ubuntu/Desktop/smartcar_xunfei_simulation/src/race_navigation/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/race_navigation" TYPE FILE FILES "/home/ubuntu/robot_car/src/race_navigation/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/race_navigation" TYPE PROGRAM FILES "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/race_navigation/catkin_generated/installspace/move.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/race_navigation" TYPE PROGRAM FILES "/home/ubuntu/robot_car/build/race_navigation/catkin_generated/installspace/move.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/race_navigation" TYPE PROGRAM FILES "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/race_navigation/catkin_generated/installspace/move_with_detection.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/race_navigation" TYPE PROGRAM FILES "/home/ubuntu/robot_car/build/race_navigation/catkin_generated/installspace/move_with_detection.py")
 endif()
 

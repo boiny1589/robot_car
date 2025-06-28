@@ -67,14 +67,14 @@ set(gazebo_pkg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(gazebo_pkg_SOURCE_PREFIX /home/ubuntu/Desktop/smartcar_xunfei_simulation/src/gazebo_pkg)
-  set(gazebo_pkg_DEVEL_PREFIX /home/ubuntu/Desktop/smartcar_xunfei_simulation/devel)
+  set(gazebo_pkg_SOURCE_PREFIX /home/ubuntu/robot_car/src/gazebo_pkg)
+  set(gazebo_pkg_DEVEL_PREFIX /home/ubuntu/robot_car/devel)
   set(gazebo_pkg_INSTALL_PREFIX "")
   set(gazebo_pkg_PREFIX ${gazebo_pkg_DEVEL_PREFIX})
 else()
   set(gazebo_pkg_SOURCE_PREFIX "")
   set(gazebo_pkg_DEVEL_PREFIX "")
-  set(gazebo_pkg_INSTALL_PREFIX /home/ubuntu/Desktop/smartcar_xunfei_simulation/install)
+  set(gazebo_pkg_INSTALL_PREFIX /home/ubuntu/robot_car/install)
   set(gazebo_pkg_PREFIX ${gazebo_pkg_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ubuntu/Desktop/smartcar_xunfei_simulation/install/lib;/home/ubuntu/Desktop/smartcar_xunfei_simulation/devel/lib;/home/ubuntu/robot_car/devel/lib;/home/ubuntu/robot_ws/devel/lib;/home/ubuntu/ros_learning/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/ubuntu/robot_car/install/lib;/home/ubuntu/Desktop/smartcar_xunfei_simulation/devel/lib;/home/ubuntu/robot_car/devel/lib;/home/ubuntu/robot_ws/devel/lib;/home/ubuntu/ros_learning/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,8 +1,8 @@
-# Install script for directory: /home/ubuntu/Desktop/smartcar_xunfei_simulation/src/gazebo_pkg
+# Install script for directory: /home/ubuntu/robot_car/src/gazebo_pkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/Desktop/smartcar_xunfei_simulation/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ubuntu/robot_car/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/gazebo_pkg/catkin_generated/installspace/gazebo_pkg.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ubuntu/robot_car/build/gazebo_pkg/catkin_generated/installspace/gazebo_pkg.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_pkg/cmake" TYPE FILE FILES
-    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/gazebo_pkg/catkin_generated/installspace/gazebo_pkgConfig.cmake"
-    "/home/ubuntu/Desktop/smartcar_xunfei_simulation/build/gazebo_pkg/catkin_generated/installspace/gazebo_pkgConfig-version.cmake"
+    "/home/ubuntu/robot_car/build/gazebo_pkg/catkin_generated/installspace/gazebo_pkgConfig.cmake"
+    "/home/ubuntu/robot_car/build/gazebo_pkg/catkin_generated/installspace/gazebo_pkgConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_pkg" TYPE FILE FILES "/home/ubuntu/Desktop/smartcar_xunfei_simulation/src/gazebo_pkg/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gazebo_pkg" TYPE FILE FILES "/home/ubuntu/robot_car/src/gazebo_pkg/package.xml")
 endif()
 

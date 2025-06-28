@@ -1,4 +1,4 @@
-prefix=/home/ubuntu/Desktop/smartcar_xunfei_simulation/install
+prefix=/home/ubuntu/robot_car/install
 
 Name: gazebo_pkg
 Description: Description of gazebo_pkg

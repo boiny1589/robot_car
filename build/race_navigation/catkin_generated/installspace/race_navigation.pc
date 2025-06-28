@@ -1,4 +1,4 @@
-prefix=/home/ubuntu/Desktop/smartcar_xunfei_simulation/install
+prefix=/home/ubuntu/robot_car/install
 
 Name: race_navigation
 Description: Description of race_navigation

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/smartcar_xunfei_simulation/src
+CMAKE_SOURCE_DIR = /home/ubuntu/robot_car/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/Desktop/smartcar_xunfei_simulation/build
+CMAKE_BINARY_DIR = /home/ubuntu/robot_car/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_empty_exp
 .PHONY : gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build/gazebo_pkg && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/ubuntu/robot_car/build/gazebo_pkg && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/ubuntu/Desktop/smartcar_xunfei_simulation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/smartcar_xunfei_simulation/src /home/ubuntu/Desktop/smartcar_xunfei_simulation/src/gazebo_pkg /home/ubuntu/Desktop/smartcar_xunfei_simulation/build /home/ubuntu/Desktop/smartcar_xunfei_simulation/build/gazebo_pkg /home/ubuntu/Desktop/smartcar_xunfei_simulation/build/gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/robot_car/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/robot_car/src /home/ubuntu/robot_car/src/gazebo_pkg /home/ubuntu/robot_car/build /home/ubuntu/robot_car/build/gazebo_pkg /home/ubuntu/robot_car/build/gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : gazebo_pkg/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "gazebo_pkg"
-PROJECT_SPACE_DIR = "/home/ubuntu/Desktop/smartcar_xunfei_simulation/devel"
+PROJECT_SPACE_DIR = "/home/ubuntu/robot_car/devel"
 PROJECT_VERSION = "0.0.0"
