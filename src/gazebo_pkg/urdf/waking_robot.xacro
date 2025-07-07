@@ -462,7 +462,7 @@
 
 <!-- gazebo插件设置相关结束 -->
 
-<!-- 深度摄像头 -->
+<!-- 深度摄像头
 <joint name="camera_depth_joint" type="fixed">
   <parent link="base_link"/>
   <child link="camera_depth_link"/>
@@ -503,6 +503,6 @@
       <pointCloudTopicName>camera/depth/points</pointCloudTopicName>
     </plugin>
   </sensor>
-</gazebo>
+</gazebo> -->
 
 </robot>

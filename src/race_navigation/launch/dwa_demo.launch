@@ -4,10 +4,10 @@
     <include file="$(find gazebo_pkg)/launch/race.launch"/>
 
     <!-- 设置地图的配置文件 -->
-    <arg name="map" default="race.yaml" />
+    <arg name="map" default="map2.yaml" />
 
     <!-- 运行地图服务器，并且加载设置的地图-->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find race_navigation)/maps/$(arg map)"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find race_navigation)/maps/map2.yaml"/>
 
     <!-- 运行move_base节点 -->
     <include file="$(find race_navigation)/launch/dwa_base.launch"/>

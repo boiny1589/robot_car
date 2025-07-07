@@ -8,7 +8,7 @@ import cv2
 import torch
 import sys
 
-sys.path.append('/home/ubuntu/Desktop/smartcar_xunfei_simulation/yolov5/yolov5')
+sys.path.append('/home/ubuntu/robot_car/yolov5/yolov5')
 
 class MoveWithDetection:
     def __init__(self):
@@ -16,9 +16,9 @@ class MoveWithDetection:
         self.bridge = CvBridge()
         # 加载yolov5模型（假设你已下载好.pt文件）
         self.model = torch.hub.load(
-            '/home/ubuntu/Desktop/smartcar_xunfei_simulation/yolov5/yolov5',  # 本地yolov5源码路径
+            '/home/ubuntu/robot_car/yolov5/yolov5',  # 本地yolov5源码路径
             'custom',
-            path='/home/ubuntu/Desktop/smartcar_xunfei_simulation/yolov5/yolov5/yolov5s.pt',  # 你的权重文件
+            path='/home/ubuntu/robot_car/yolov5/yolov5/best.pt',  # 你的权重文件
             source='local'
         )
         self.model.conf = 0.5  # 置信度阈值，可调整

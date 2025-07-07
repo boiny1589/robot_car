@@ -7,7 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/home/ubuntu/Desktop/smartcar_xunfei_simulation/devel/lib:/home/ubuntu/robot_ws/devel/lib:/home/ubuntu/ros_learning/devel/lib:/opt/ros/noetic/lib'
-export PKG_CONFIG_PATH='/home/ubuntu/Desktop/smartcar_xunfei_simulation/devel/lib/pkgconfig:/home/ubuntu/robot_ws/devel/lib/pkgconfig:/home/ubuntu/ros_learning/devel/lib/pkgconfig:/opt/ros/noetic/lib/pkgconfig'
+export PATH='/opt/ros/noetic/bin:/home/ubuntu/miniconda3/condabin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
 export PWD='/home/ubuntu/robot_car/build'
-export ROS_PACKAGE_PATH='/home/ubuntu/Desktop/smartcar_xunfei_simulation/src:/home/ubuntu/robot_car/src:/home/ubuntu/robot_ws/src:/home/ubuntu/ros_learning/src:/opt/ros/noetic/share'
