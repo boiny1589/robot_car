@@ -1,0 +1,6 @@
+{
+  "urdf-visualizer.packages": {
+    "gazebo_pkg": "${workspaceFolder}/src/gazebo_pkg"
+  },
+  "cmake.ignoreCMakeListsMissing": true
+}

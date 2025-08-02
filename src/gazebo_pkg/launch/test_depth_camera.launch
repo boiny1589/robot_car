@@ -1,0 +1,20 @@
+<launch>
+  <!-- 专门测试深度相机功能的启动文件 -->
+  
+  <!-- 加载机器人模型并启用深度相机功能 -->
+  <include file="$(find gazebo_pkg)/launch/race.launch">
+    <arg name="use_rviz" value="true"/>
+    <arg name="use_depth_processing" value="true"/>
+  </include>
+  
+  <!-- 启动图像查看器，查看深度图像 -->
+  <node name="image_view_depth" pkg="image_view" type="image_view">
+    <remap from="image" to="/camera/depth/image_raw"/>
+    <param name="autosize" value="true" />
+  </node>
+
+  <!-- 提示信息 -->
+  <node name="depth_camera_info" pkg="rostopic" type="rostopic" 
+        args="echo /camera/depth/camera_info" output="screen"/>
+        
+</launch>

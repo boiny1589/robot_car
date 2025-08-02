@@ -1,7 +1,7 @@
 <launch>
   <!-- 启动仿真环境和小车 -->
   <include file="$(find gazebo_pkg)/launch/race.launch"/>
-
+  
   <!-- 启动gmapping建图 -->
   <include file="$(find race_navigation)/launch/gmapping.launch"/>
 

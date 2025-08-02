@@ -1,0 +1,48 @@
+<launch>
+  <!-- 参数设置 -->
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="use_rviz" default="false"/> <!-- 默认不启动RViz -->
+  <arg name="use_depth_processing" default="false"/> <!-- 默认不启动深度处理 -->
+
+  <!-- 启动Gazebo仿真环境 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find gazebo_pkg)/world/xinjian.world"/> 
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+  </include>
+  
+  <!-- 加载机器人URDF模型到参数服务器 -->
+  <arg name="model" default="$(find gazebo_pkg)/urdf/waking_robot.xacro" />
+  <param name="robot_description" command="$(find xacro)/xacro  --inorder $(arg model)" />
+ 
+  <!-- 在Gazebo中生成机器人 -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model robot -param robot_description -z 0.05"/> 
+
+  <!-- 启动关节状态发布器 -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  
+  <!-- 启动深度图像处理 (可选) -->
+  <group if="$(arg use_depth_processing)">
+    <!-- 深度点云处理 -->
+    <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" />
+    
+    <!-- 可选: 将深度图像转换为点云 -->
+    <node pkg="nodelet" type="nodelet" name="depth_to_pointcloud" 
+          args="load depth_image_proc/point_cloud_xyz nodelet_manager">
+      <remap from="camera_info" to="/camera/depth/camera_info"/>
+      <remap from="image_rect" to="/camera/depth/image_raw"/>
+      <remap from="points" to="/camera/depth/points_processed"/>
+    </node>
+  </group>
+
+  <!-- 启动RViz可视化 (可选) -->
+  <group if="$(arg use_rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" 
+          args="-d $(find gazebo_pkg)/rviz/depth_camera.rviz" />
+  </group>
+
+</launch>

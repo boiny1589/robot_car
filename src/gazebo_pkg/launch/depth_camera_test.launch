@@ -1,0 +1,28 @@
+<launch>
+  <!-- 加载机器人模型到参数服务器 -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find gazebo_pkg)/urdf/waking_robot.xacro'" />
+
+  <!-- 启动Gazebo仿真环境 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- 将机器人模型加载到Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
+    args="-param robot_description -urdf -model robot" />
+
+  <!-- 启动robot_state_publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- 启动rviz可视化 -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gazebo_pkg)/rviz/depth_camera.rviz" />
+
+  <!-- 如果需要处理深度图像，可以添加image_proc节点 -->
+  <!-- <node pkg="nodelet" type="nodelet" name="depth_image_proc" 
+        args="standalone depth_image_proc/point_cloud_xyz" /> -->
+</launch>

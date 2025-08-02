@@ -1,0 +1,59 @@
+<launch>
+  <!-- 专门测试深度相机点云功能的启动文件 (适用于ROS Noetic) -->
+  
+  <!-- 加载机器人模型到参数服务器 -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro $(find gazebo_pkg)/urdf/waking_robot.xacro" />
+
+  <!-- 启动Gazebo仿真环境 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- 将机器人模型加载到Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-param robot_description -urdf -model robot -z 0.05" />
+
+  <!-- 启动robot_state_publisher -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- 添加nodelet管理器 -->
+  <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" output="screen"/>
+
+  <!-- 深度图像转点云的nodelet (ROS Noetic版本) -->
+  <node pkg="nodelet" type="nodelet" name="depth_to_pointcloud" 
+        args="load depth_image_proc/point_cloud_xyzrgb nodelet_manager" output="screen">
+    <remap from="rgb/camera_info" to="/camera/depth/camera_info"/>
+    <remap from="rgb/image_rect_color" to="/camera/depth/image_raw"/>
+    <remap from="depth_registered/image_rect" to="/camera/depth/image_raw"/>
+    <remap from="depth_registered/points" to="/camera/depth/points_converted"/>
+  </node>
+
+  <!-- 使用point_cloud_xyz作为备选方案 -->
+  <node pkg="nodelet" type="nodelet" name="depth_to_pointcloud_xyz" 
+        args="load depth_image_proc/point_cloud_xyz nodelet_manager" output="screen">
+    <remap from="camera_info" to="/camera/depth/camera_info"/>
+    <remap from="image_rect" to="/camera/depth/image_raw"/>
+    <remap from="points" to="/camera/depth/points_xyz"/>
+  </node>
+  
+  <!-- 启动RViz显示点云 -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find gazebo_pkg)/rviz/depth_camera.rviz" />
+
+  <!-- 启动图像查看器 -->
+  <node name="image_view_depth" pkg="image_view" type="image_view" output="screen">
+    <remap from="image" to="/camera/depth/image_raw"/>
+    <param name="autosize" value="true" />
+  </node>
+
+  <!-- 输出点云信息的节点 -->
+  <node name="point_cloud_info" pkg="rostopic" type="rostopic" 
+        args="echo /camera/depth/points -n 1" output="screen"/>
+
+  <!-- 可能需要安装以下包：sudo apt-get install ros-noetic-depth-image-proc -->
+</launch>

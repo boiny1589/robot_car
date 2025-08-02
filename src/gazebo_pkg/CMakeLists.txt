@@ -7,8 +7,23 @@ project(gazebo_pkg)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  gazebo_ros
+  sensor_msgs
+  pcl_ros
+  pcl_conversions
+  tf
+  depth_image_proc
+  cv_bridge
+  image_transport
+)
 find_package(catkin REQUIRED)
+## 添加PCL依赖
+find_package(PCL REQUIRED)
 
+## 添加Gazebo依赖
+find_package(gazebo REQUIRED)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -103,6 +118,7 @@ catkin_package(
 #  LIBRARIES gazebo_pkg
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
+   CATKIN_DEPENDS roscpp gazebo_ros sensor_msgs pcl_ros pcl_conversions tf depth_image_proc cv_bridge image_transport
 )
 
 ###########
@@ -114,6 +130,9 @@ catkin_package(
 include_directories(
 # include
 # ${catkin_INCLUDE_DIRS}
+${catkin_INCLUDE_DIRS}
+${PCL_INCLUDE_DIRS}
+${GAZEBO_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
