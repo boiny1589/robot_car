@@ -19,10 +19,21 @@ obstacle_layer:
   obstacle_range: 2.5
   raytrace_range: 3.0
 
-  observation_sources: scan
+  observation_sources: scan point_cloud
   scan: {
     data_type: LaserScan,
     topic: /scan,
     marking: true,
     clearing: true
+  }
+  point_cloud: {
+    data_type: PointCloud2,
+    topic: /camera/depth/points_processed,
+    marking: true,
+    clearing: true,
+    min_obstacle_height: 0.0,
+    max_obstacle_height: 2.0,
+    observation_persistence: 0.0,
+    expected_update_rate: 0.5,
+    filter_ground: false
   }

@@ -16,13 +16,17 @@
   <!-- Load the URDF into the ROS Parameter Server -->
   <arg name="model" default="$(find gazebo_pkg)/urdf/waking_robot.xacro" />
  
-  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+  <param name="robot_description" command="$(find xacro)/xacro  --inorder $(arg model)" />
  
   <!-- Run a python script to send a service call the gazebo_ros to spawn a URDF robot -->
+  <!-- 先让Gazebo完全启动，然后再生成机器人 -->
+  <arg name="spawn_delay" default="5.0" />
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-	args="-urdf -model robot -param robot_description -z 0.05"/> 
+	args="-urdf -model robot -param robot_description -z 0.05" launch-prefix="bash -c 'sleep $(arg spawn_delay); exec $0 $@'" /> 
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
+  <!-- 设置脚本启动相机信息发布器 -->
+  <node name="camera_info_publisher" pkg="gazebo_pkg" type="camera_info_publisher.py" output="screen" launch-prefix="bash -c 'sleep 8.0; exec $0 $@'"/>
 </launch>

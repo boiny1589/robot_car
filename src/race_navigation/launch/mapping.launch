@@ -1,12 +1,26 @@
 <launch>
   <!-- 启动仿真环境和小车 -->
   <include file="$(find gazebo_pkg)/launch/race.launch"/>
-  
+
   <!-- 启动gmapping建图 -->
   <include file="$(find race_navigation)/launch/gmapping.launch"/>
 
   <!-- 运行move_base节点（用dwa_base.launch，参数更全） -->
   <include file="$(find race_navigation)/launch/dwa_base.launch"/>
+
+  <!-- 创建Nodelet Manager用于点云处理 -->
+  <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" />
+
+  <!-- 点云过滤 - 直接使用相机生成的点云数据 -->
+  <node pkg="nodelet" type="nodelet" name="point_cloud_filter" 
+        args="load pcl/PassThrough nodelet_manager">
+    <param name="filter_field_name" value="z" />
+    <param name="filter_limit_min" value="0.1" />
+    <param name="filter_limit_max" value="2.0" />
+    <param name="filter_limit_negative" value="false" />
+    <remap from="~input" to="/camera/depth/points" />
+    <remap from="~output" to="/camera/depth/points_processed" />
+  </node>
 
   <!-- 运行rviz（延迟5秒，可选） -->
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find race_navigation)/rviz/gmapping.rviz" />
