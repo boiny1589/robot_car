@@ -16,8 +16,6 @@
                                 izz="0.1" />
                </inertial>
 	</xacro:macro>
-    <link name="dummy">
-    </link>
 	<link name="base_footprint">
    		<visual>
 			<geometry>
@@ -27,10 +25,6 @@
    		</visual>
 		<xacro:default_inertial mass="0.0001"/>
  	</link>
-   <joint name="dummy_joint" type="fixed">
-     <parent link="dummy"/>
-     <child link="base_footprint"/>
-   </joint>
 <!--  	<xacro:include filename="$(find nav_sim)/urdf/robot.gazebo" />  -->    
  
 	<gazebo reference="base_footprint">
@@ -39,11 +33,14 @@
 	</gazebo>
 
 	<joint name="base_footprint_joint" type="fixed">
-		<origin xyz="0 0 0" />
+		<!-- <origin xyz="0 0 0" />
 		<parent link="base_footprint" />
 		<child link="base_link" />
-	</joint>
-
+	</joint> -->
+    <origin xyz="0 0 0.06" />  <!-- 当前是0，应该设置为0.06 -->
+    <parent link="base_footprint" />
+    <child link="base_link" />
+</joint>
 
 	<link name="base_link">
    		<visual>
@@ -391,11 +388,6 @@
           <near>0.05</near>
           <far>5.0</far>
         </clip>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
       </camera>
       <plugin name="camera_depth_controller" filename="libgazebo_ros_depth_camera.so">
         <alwaysOn>true</alwaysOn>
@@ -406,20 +398,10 @@
         <depthImageTopicName>depth/image_raw</depthImageTopicName>
         <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
         <pointCloudTopicName>depth/points</pointCloudTopicName>
-        <frameName>camera_link</frameName>
+        <frameName>camera_depth_frame</frameName>  <!-- 改为camera_depth_frame -->
         <hackBaseline>0.07</hackBaseline>
         <pointCloudCutoff>0.05</pointCloudCutoff>
         <pointCloudCutoffMax>5.0</pointCloudCutoffMax>
-        <updateRate>30</updateRate>
-        <publishImage>true</publishImage>
-        <publishCameraInfo>true</publishCameraInfo>
-        <publishDepth>true</publishDepth>
-        <publishPointCloud>true</publishPointCloud>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
-        <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
       </plugin>
     </sensor>
   </gazebo>  
@@ -440,7 +422,7 @@
     <commandTopic>cmd_vel</commandTopic>
     <odometryTopic>odom</odometryTopic>
     <odometryFrame>odom</odometryFrame>
-    <robotBaseFrame>dummy</robotBaseFrame>
+    <robotBaseFrame>base_footprint</robotBaseFrame>  <!-- 改为base_footprint -->
     <broadcastTF>1</broadcastTF>
   </plugin>
 </gazebo>
@@ -471,5 +453,21 @@
 <!-- gazebo插件设置相关结束 -->
 
 <!-- 原来的深度摄像头代码已被整合到camera_link中 -->
+
+<!-- Camera depth frame joint -->
+<joint name="camera_depth_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_depth_frame"/>
+</joint>
+
+<!-- Camera depth frame -->
+<link name="camera_depth_frame">
+    <inertial>
+        <mass value="1e-5" />
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+</link>
 
 </robot>
